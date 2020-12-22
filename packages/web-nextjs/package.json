@@ -6,6 +6,18 @@
     "build": "next build",
     "start": "next start"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write --print-width 100 --single-quote",
+      "eslint --fix",
+      "git add"
+    ]
+  },
   "dependencies": { 
     "@zeit/next-css": "^1.0.1",
     "components": "0.0.1",
