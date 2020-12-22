@@ -10,18 +10,6 @@
     "studio": "studio android",
     "xcode": "xed ios"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.js": [
-      "prettier --write --print-width 100 --single-quote",
-      "eslint --fix",
-      "git add"
-    ]
-  },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.13.2",
     "components": "0.0.1",
