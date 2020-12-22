@@ -5,17 +5,17 @@ import {
   SET_ACTIVE_USER,
   USER_LOGOUT,
   USER_SET,
-  USER_UPDATE_SET
+  USER_UPDATE_SET,
 } from '../actionTypes/UserActionTypes';
 
 const initialState = {
-  userToken: {},
+  userToken: '',
   user: {},
-  passwordChanged: false
+  passwordChanged: false,
 };
 
 export default (state = initialState, action) =>
-  produce(state, draft => {
+  produce(state, (draft) => {
     /*eslint-disable indent */
     switch (action.type) {
       case SET_ACTIVE_USER:

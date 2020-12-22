@@ -3,15 +3,16 @@ import ApiService from './ApiService';
 const ENDPOINTS = {
   PROFILE: '/auth/me',
   CHANGE_PASSWORD: '/user/change-password',
-  USER: '/user'
+  USER: '/user',
 };
 
 class ProfileService extends ApiService {
   getProfile = () => this.apiClient.get(ENDPOINTS.PROFILE);
 
-  changePassword = data => this.apiClient.post(ENDPOINTS.CHANGE_PASSWORD, data);
+  changePassword = (data) =>
+    this.apiClient.post(ENDPOINTS.CHANGE_PASSWORD, data);
 
-  updateUser = data => {
+  updateUser = (data) => {
     let formData = new FormData();
     if (data.avatar) {
       const uri = data.avatar.uri;

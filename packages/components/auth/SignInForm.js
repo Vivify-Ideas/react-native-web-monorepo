@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { login } from 'store/actions/UserActions';
 import { signInErrorSelector } from 'store/selectors/ErrorSelector';
 import { signInValidationRules } from 'validation/auth';
+import { AuthContainerStyles } from '../../styles/auth';
 
 import { TextInputField } from '../shared/FormFields';
 import ErrorText from '../shared/Text/ErrorText';
@@ -13,7 +14,7 @@ import ErrorText from '../shared/Text/ErrorText';
 export const SignInForm = () => {
   const dispatch = useDispatch();
 
-  const handleSignIn = data => dispatch(login(data));
+  const handleSignIn = (data) => dispatch(login(data));
 
   const signInError = useSelector(signInErrorSelector());
 
@@ -24,15 +25,22 @@ export const SignInForm = () => {
       validationSchema={signInValidationRules}
     >
       {({ handleSubmit }) => (
-        <View>
-          <Field name="email" component={TextInputField} placeholder={$t('auth.enterEmail')} />
+        <View style={AuthContainerStyles.wrapper}>
+          <Field
+            name="email"
+            component={TextInputField}
+            placeholder={$t('auth.enterEmail')}
+          />
           <Field
             name="password"
             component={TextInputField}
             secureTextEntry
             placeholder={$t('auth.enterPassword')}
           />
-          <ErrorText error={!!signInError} message={$t('auth.invalidCredentials')} />
+          <ErrorText
+            error={!!signInError}
+            message={$t('auth.invalidCredentials')}
+          />
           <TouchableOpacity onPress={handleSubmit}>
             <Text>{$t('auth.signIn')}</Text>
           </TouchableOpacity>

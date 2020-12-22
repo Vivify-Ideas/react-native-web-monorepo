@@ -1,6 +1,9 @@
 module.exports = function bpe(api) {
   //   api.cache(true);
-  const presets = ['module:metro-react-native-babel-preset', 'module:react-native-dotenv'];
+  const presets = [
+    'module:metro-react-native-babel-preset',
+    'module:react-native-dotenv',
+  ];
 
   const moduleResolver = [
     'module-resolver',
@@ -14,16 +17,17 @@ module.exports = function bpe(api) {
         styles: '../styles',
         store: '../store',
         services: '../services',
-        assets: '../assets'
-      }
-    }
+        assets: '../assets',
+        constants: '../constants',
+      },
+    },
   ];
 
   const plugins = [moduleResolver];
 
   const envDevelopment = {
     presets: presets,
-    plugins: ['@babel/transform-react-jsx-source', moduleResolver]
+    plugins: ['@babel/transform-react-jsx-source', moduleResolver],
   };
 
   if (api.env(['development', 'test'])) {
@@ -32,6 +36,6 @@ module.exports = function bpe(api) {
 
   return {
     presets: presets,
-    plugins: plugins
+    plugins: plugins,
   };
 };

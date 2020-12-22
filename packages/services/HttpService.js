@@ -7,7 +7,10 @@ import NavigationService from './NavigationService';
 class HttpService {
   constructor(options = {}) {
     this.client = axios.create(options);
-    this.client.interceptors.response.use(this.handleSuccessResponse, this.handleErrorResponse);
+    this.client.interceptors.response.use(
+      this.handleSuccessResponse,
+      this.handleErrorResponse,
+    );
     this.unauthorizedCallback = () => {};
   }
 
@@ -16,24 +19,24 @@ class HttpService {
   }
 
   removeHeaders(headerKeys) {
-    headerKeys.forEach(key => delete this.client.defaults.headers[key]);
+    headerKeys.forEach((key) => delete this.client.defaults.headers[key]);
   }
 
   handleSuccessResponse(response) {
     return response;
   }
 
-  handleErrorResponse = error => {
+  handleErrorResponse = (error) => {
     try {
       const { status } = error.response;
       switch (status) {
-      case 401:
-        AsyncStorage.clear();
-        this.unauthorizedCallback();
-        NavigationService.navigate('SignIn');
-        break;
-      default:
-        break;
+        case 401:
+          AsyncStorage.removeItem('user');
+          this.unauthorizedCallback();
+          NavigationService.navigate('SignIn');
+          break;
+        default:
+          break;
       }
 
       return Promise.reject(error);
@@ -48,7 +51,7 @@ class HttpService {
 }
 
 const options = {
-  baseURL: config.API_BASE_URL
+  baseURL: config.API_BASE_URL,
 };
 const httpService = new HttpService(options);
 

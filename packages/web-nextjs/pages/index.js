@@ -1,3 +1,13 @@
-import { SignInForm } from 'components/auth/SignInForm';
+import React from 'react';
+import { View, Text } from 'react-native';
+import withAuth from '../../utils/hoc/withAuth';
 
-export default SignInForm;
+const App = () => {
+  return (
+    <View>
+      <Text>App</Text>
+    </View>
+  );
+};
+
+export default withAuth(App);

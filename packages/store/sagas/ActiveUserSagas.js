@@ -10,10 +10,14 @@ import {
   setResetPasswordError,
   setSignInError,
   setSignUpErrors,
-  setSocialLoginError
+  setSocialLoginError,
 } from '../actions/ErrorActions';
 import { setLoader } from '../actions/LoaderAction';
-import { setChangePasswordSuccess, setUpdatedUser, setUser } from '../actions/UserActions';
+import {
+  setChangePasswordSuccess,
+  setUpdatedUser,
+  setUser,
+} from '../actions/UserActions';
 
 export function* userLogin({ payload }) {
   try {
@@ -22,6 +26,7 @@ export function* userLogin({ payload }) {
     yield call(authService.login, payload);
     NavigationService.navigate('AuthLoading');
   } catch (error) {
+    console.log({ error });
     if (error.response.status === 401) {
       yield put(setSignInError(true));
     } else {
