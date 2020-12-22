@@ -10,7 +10,7 @@ const AuthLoadingScreen = ({ navigation }) => {
   const dispatch = useDispatch();
 
   const handleGetUser = () => dispatch(getUser());
-  const handleSetActiveUser = data => dispatch(setActiveUser(data));
+  const handleSetActiveUser = (data) => dispatch(setActiveUser(data));
 
   const user = useSelector(userSelector());
 
@@ -18,14 +18,11 @@ const AuthLoadingScreen = ({ navigation }) => {
     bootstrapAsync();
   }, []);
 
-  useEffect(
-    () => {
-      if (user.id) {
-        navigation.navigate('MainStack');
-      }
-    },
-    [user.id]
-  );
+  useEffect(() => {
+    if (user.id) {
+      navigation.navigate('MainStack');
+    }
+  }, [user.id]);
 
   // Fetch the token from storage then navigate to our appropriate place
   const bootstrapAsync = async () => {
@@ -45,13 +42,14 @@ const AuthLoadingScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <ActivityIndicator style={styles.loading} />
+
       <StatusBar barStyle="default" />
     </View>
   );
 };
 
 AuthLoadingScreen.propTypes = {
-  navigation: PropTypes.object
+  navigation: PropTypes.object,
 };
 
 export default AuthLoadingScreen;
@@ -59,10 +57,10 @@ export default AuthLoadingScreen;
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#fff',
-    flex: 1
+    flex: 1,
   },
 
   loading: {
-    marginTop: 30
-  }
+    marginTop: 30,
+  },
 });

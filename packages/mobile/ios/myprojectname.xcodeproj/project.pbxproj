@@ -18,6 +18,7 @@
 		2DCD954D1E0B4F2C00145EB5 /* myprojectnameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* myprojectnameTests.m */; };
 		7C608A7415B4F338CC54C81B /* libPods-myprojectname-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F24CCD5E721CDC21A799C1CD /* libPods-myprojectname-tvOSTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		D5A6ED3425922D6C00B3DDD6 /* libRNSVG.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D5A6ED3325922D6C00B3DDD6 /* libRNSVG.a */; };
 		DA9D149C705F5D2B25F975BB /* libPods-myprojectname-myprojectnameTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E679A42AF30F402DCEE79F7 /* libPods-myprojectname-myprojectnameTests.a */; };
 		FFA8619498228CFD7A4B3C04 /* libPods-myprojectname-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A3BF1A9B0F1651FE65934B6 /* libPods-myprojectname-tvOS.a */; };
 /* End PBXBuildFile section */
@@ -62,6 +63,7 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = myprojectname/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BB524B6F3F9DE4008F3FC00D /* Pods-myprojectname.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myprojectname.debug.xcconfig"; path = "Target Support Files/Pods-myprojectname/Pods-myprojectname.debug.xcconfig"; sourceTree = "<group>"; };
 		BB8BF4831F2AB76D99287302 /* Pods-myprojectname-myprojectnameTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myprojectname-myprojectnameTests.debug.xcconfig"; path = "Target Support Files/Pods-myprojectname-myprojectnameTests/Pods-myprojectname-myprojectnameTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D5A6ED3325922D6C00B3DDD6 /* libRNSVG.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRNSVG.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8C7DC9AC0E001CEB872D33D /* Pods-myprojectname-myprojectnameTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myprojectname-myprojectnameTests.release.xcconfig"; path = "Target Support Files/Pods-myprojectname-myprojectnameTests/Pods-myprojectname-myprojectnameTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
@@ -82,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5A6ED3425922D6C00B3DDD6 /* libRNSVG.a in Frameworks */,
 				028EFEB3CAA16E0A94C70909 /* libPods-myprojectname.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,6 +142,7 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D5A6ED3325922D6C00B3DDD6 /* libRNSVG.a */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
 				F2E759CFD388511D081BB36E /* libPods-myprojectname.a */,

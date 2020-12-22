@@ -6,12 +6,13 @@ import { Button, StyleSheet, View } from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { useDispatch } from 'react-redux';
 import { facebookLogin, googleLogin } from 'store/actions/UserActions';
+import Logo from '../../../assets/images/vi-logo.svg';
 
 const SignInScreen = ({ navigation }) => {
   const dispatch = useDispatch();
 
-  const handleFacebookLogin = data => dispatch(facebookLogin(data));
-  const handleGoogleLogin = data => dispatch(googleLogin(data));
+  const handleFacebookLogin = (data) => dispatch(facebookLogin(data));
+  const handleGoogleLogin = (data) => dispatch(googleLogin(data));
 
   const goToSignUp = () => {
     navigation.navigate('SignUp');
@@ -26,6 +27,7 @@ const SignInScreen = ({ navigation }) => {
       <KeyboardAwareScrollView enableOnAndroid>
         <SignInForm />
 
+        <Logo width={20} height={20} fill="#ff2f2f"></Logo>
         <Button title="Sign in with Facebook!" onPress={handleFacebookLogin} />
         <Button title="Sign in with Google!" onPress={handleGoogleLogin} />
         <Button title="Sign up!" onPress={goToSignUp} />
@@ -36,11 +38,11 @@ const SignInScreen = ({ navigation }) => {
 };
 
 SignInScreen.propTypes = {
-  navigation: PropTypes.object
+  navigation: PropTypes.object,
 };
 
 SignInScreen.navigationOptions = {
-  title: $t('auth.signIn')
+  title: $t('auth.signIn'),
 };
 
 export default SignInScreen;
@@ -48,6 +50,6 @@ export default SignInScreen;
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#fff',
-    flex: 1
-  }
+    flex: 1,
+  },
 });

@@ -16,7 +16,6 @@ const Header = () => {
 
   const user = useSelector(userSelector());
   const auth = useSelector(makeSelectUserAuthStatus());
-  console.log(auth);
 
   const handleSignOut = () => dispatch(logout());
 

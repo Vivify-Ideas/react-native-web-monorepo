@@ -11,11 +11,12 @@ module.exports = {
           components: '../components',
           utils: '../utils',
           validation: '../validation',
-          styles: '../styles',
+          styles: '../stylesWeb',
           store: '../store',
           services: '../services',
           assets: '../assets',
           constants: '../constants',
+          config: '../configWeb',
           'react-navigation': '../services/webNavigation.js',
           '@react-native-async-storage/async-storage':
             '../services/webAsyncStorage.js',

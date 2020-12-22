@@ -6,7 +6,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { login } from 'store/actions/UserActions';
 import { signInErrorSelector } from 'store/selectors/ErrorSelector';
 import { signInValidationRules } from 'validation/auth';
-import { AuthContainerStyles } from '../../styles/auth';
+import { AuthContainerStyles } from 'styles/auth';
+import config from 'config';
 
 import { TextInputField } from '../shared/FormFields';
 import ErrorText from '../shared/Text/ErrorText';
@@ -44,6 +45,7 @@ export const SignInForm = () => {
           <TouchableOpacity onPress={handleSubmit}>
             <Text>{$t('auth.signIn')}</Text>
           </TouchableOpacity>
+          <Text>{config.API_BASE_URL}</Text>
         </View>
       )}
     </Formik>

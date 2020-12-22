@@ -1,7 +1,7 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
 
-import config from '../config';
+import config from 'config';
 import NavigationService from './NavigationService';
 
 class HttpService {
@@ -50,6 +50,7 @@ class HttpService {
   }
 }
 
+console.log(config);
 const options = {
   baseURL: config.API_BASE_URL,
 };

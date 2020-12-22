@@ -19,6 +19,7 @@ module.exports = function bpe(api) {
         services: '../services',
         assets: '../assets',
         constants: '../constants',
+        config: '../config',
       },
     },
   ];
